@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <!--1. flexible插件使用  手机淘宝团队开发的-->
+    <!--2. 下载： https://github.com/amfe/lib-flexible -->
+    <!--3. 引入 index.min.js -->
+    <!--4. 初始化  直接导入即可-->
+    <script src="assets/flexible/index.min.js"></script>
+    <!--原理：通过改变html的字体大小，去改变页面上所有使用rem单位元素的尺寸-->
+    <!--5. 以前修改html的字体大小 会依赖一个参考值  初始基准值
+    50/375 = 100/750 ？？？  37.5/375 = 75/750  字体大小=当前设备的十分之一
+    当前设备的字体大小/当前设备的宽度 = 初始基准值/设计稿的宽度
+    -->
+    <style>
+        /*750设计稿  量取 100*100 元素 */
+        .box{
+            width: 1.3333rem;
+            height: 1.3333rem;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

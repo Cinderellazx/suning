@@ -1,0 +1,36 @@
+//通过mixin生成适配代码
+//注意：生成的媒体查询 升序排列
+//.adapter(@dw){
+//  @media (min-width: @dw){
+//    html{
+//      font-size: @dw/@psdW*@bs;
+//    }
+//  }
+//}
+//.adapter(320px);
+//.adapter(360px);
+//.adapter(375px);
+
+//怎么遍历  less不支持分支循环语句
+//.adapter(@count) when (@count <= 5){
+//  .box{
+//    width: @count;
+//  }
+//  .adapter(@count + 1);
+//}
+//.adapter(1);
+
+//最后的代码
+.adapter(@count) when (@count <= length(@deviceWidth)){
+  @media (min-width: extract(@deviceWidth,@count)){
+    html{
+      font-size: extract(@deviceWidth,@count)/@psdW*@bs;
+    }
+  }
+  .adapter(@count + 1);
+}
+//调用
+.adapter(1);
+
+
+
